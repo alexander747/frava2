@@ -1,3 +1,12 @@
+<?php
+session_start();
+if(!isset($_SESSION['usu_id'])) {
+ header('Location: ../index.php');
+ exit();
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -100,33 +109,24 @@
                             <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href=""
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img
                                     src="../assets/images/users/1.jpg" alt="user" class=""> <span
-                                    class="hidden-md-down">Mark &nbsp;<i class="fa fa-angle-down"></i></span> </a>
+                                    class="hidden-md-down"> <?php echo $_SESSION['usu_correo'] ?> &nbsp;<i
+                                        class="fa fa-angle-down"></i></span> </a>
                             <div class="dropdown-menu dropdown-menu-right animated flipInY">
-                                <!-- text-->
-                                <a href="javascript:void(0)" class="dropdown-item"><i class="ti-user"></i> My
-                                    Profile</a>
-                                <!-- text-->
-                                <a href="javascript:void(0)" class="dropdown-item"><i class="ti-wallet"></i> My
-                                    Balance</a>
-                                <!-- text-->
-                                <a href="javascript:void(0)" class="dropdown-item"><i class="ti-email"></i> Inbox</a>
+
+                                <a href="ctr_cerrarSesion.php?accion=1" class="dropdown-item"><i
+                                        class="ti-settings"></i> Cerrar
+                                    sesión</a>
                                 <!-- text-->
                                 <div class="dropdown-divider"></div>
-                                <!-- text-->
-                                <a href="javascript:void(0)" class="dropdown-item"><i class="ti-settings"></i> Account
-                                    Setting</a>
-                                <!-- text-->
-                                <div class="dropdown-divider"></div>
-                                <!-- text-->
-                                <a href="login.html" class="dropdown-item"><i class="fa fa-power-off"></i> Logout</a>
-                                <!-- text-->
+
                             </div>
+                        <li class="nav-item right-side-toggle"> <a class="nav-link  waves-effect waves-light"
+                                href="javascript:void(0)"><i class="ti-settings"></i></a></li>
                         </li>
                         <!-- ============================================================== -->
                         <!-- End User Profile -->
                         <!-- ============================================================== -->
-                        <li class="nav-item right-side-toggle"> <a class="nav-link  waves-effect waves-light"
-                                href="javascript:void(0)"><i class="ti-settings"></i></a></li>
+
                     </ul>
                 </div>
             </nav>
@@ -164,25 +164,10 @@
                     <ul id="sidebarnav">
 
                         <li class="nav-small-cap">--- PROFESSIONAL</li>
-                        <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)"
-                                aria-expanded="false"><i class="ti-calendar"></i><span
-                                    class="hide-menu">Appointment</span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="doctor-schedule.html">Doctor Schedule</a></li>
-                                <li><a href="book-appointment.html">Book Appointment</a></li>
-                            </ul>
+                        <li> <a class="waves-effect waves-dark" href="dashboard.php" aria-expanded="false"><i
+                                    class="mdi mdi-account-multiple"></i>
+                                <span class="hide-menu">Usuarios</span></a>
                         </li>
-                        <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)"
-                                aria-expanded="false"><i class="fa fa-user-md"></i><span
-                                    class="hide-menu">Doctors</span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="doctors.html">All Doctors</a></li>
-                                <li><a href="add-doctor.html">Add Doctor</a></li>
-                                <li><a href="edit-doctor.html">Edit Doctor</a></li>
-                                <li><a href="doctor-profile.html">Doctor Profile</a></li>
-                            </ul>
-                        </li>
-
                     </ul>
                 </nav>
                 <!-- End Sidebar navigation -->
