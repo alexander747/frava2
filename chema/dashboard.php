@@ -205,6 +205,7 @@ if(!isset($_SESSION['usu_id'])) {
                                                         <thead>
                                                             <tr>
                                                                 <th>Rol</th>
+                                                                <th>Fecha de ingreso</th>
                                                                 <th>Puntaje</th>
                                                                 <th>Nombre</th>
                                                                 <th>Estado</th>
@@ -470,6 +471,9 @@ if(!isset($_SESSION['usu_id'])) {
             },
             columns: [{
                     data: "usu_rol"
+                },
+                {
+                    data: "usu_fecha_ingreso_barbero"
                 },
                 {
                     data: "usu_barberoPuntaje"
