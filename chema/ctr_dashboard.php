@@ -90,7 +90,9 @@ switch($accion){
 		$idusuario = $_POST["idusuario"];
 
 		if($rolup=='Barbero'){
-			$q = "UPDATE usuarios SET usu_rol='$rolup', usu_estado='$estadoup', usu_nombre='$nombreup', usu_telefono='$telefonoup', usu_direccion='$direccion', usu_barberoDescripcion='$descripcionbarbero' WHERE usu_id='$idusuario'";
+			$fecha = date("Y/m/d", strtotime($_POST['fechaingresobarbero']));
+			
+			$q = "UPDATE usuarios SET usu_rol='$rolup', usu_estado='$estadoup', usu_nombre='$nombreup', usu_telefono='$telefonoup', usu_direccion='$direccion', usu_barberoDescripcion='$descripcionbarbero', usu_fecha_ingreso_barbero='$fecha' WHERE usu_id='$idusuario'";
 		}else{
 			$q = "UPDATE usuarios SET usu_rol='$rolup', usu_estado='$estadoup', usu_nombre='$nombreup', usu_telefono='$telefonoup', usu_direccion='$direccion' WHERE usu_id='$idusuario'";
 		}

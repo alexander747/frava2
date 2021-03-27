@@ -299,6 +299,12 @@ if(!isset($_SESSION['usu_id'])) {
                                         </select>
                                     </div>
 
+                                    <div class="form-group" id="contenedorfechaingresobarbero">
+                                        <label>Fecha de ingreso como barbero</label>
+                                        <input type="date" class="form-control" id="fechaingresobarbero"
+                                            name="fechaingresobarbero">
+                                    </div>
+
                                     <div class="form-group">
                                         <label>Estado</label>
                                         <select class="form-control" name="estadoup" id="estadoup">
@@ -548,9 +554,16 @@ if(!isset($_SESSION['usu_id'])) {
             if (data.usu_rol == "Barbero") {
                 $("#descripcionbarbero").val(data.usu_barberoDescripcion);
                 $("#contenedordescripcionbarbero").css("display", "block");
+                $("#contenedorfechaingresobarbero").css("display", "block");
+                $("#fechaingresobarbero").val(data.usu_fecha_ingreso_barbero);
+
+
             } else {
                 $("#contenedordescripcionbarbero").css("display", "none");
                 $("#descripcionbarbero").val("");
+                $("#contenedorfechaingresobarbero").css("display", "none");
+
+
             }
             $("#idusuario").val(data.usu_id);
         });
@@ -591,8 +604,11 @@ if(!isset($_SESSION['usu_id'])) {
             let rol = $("#rolup").val();
             if (rol == 'Barbero') {
                 $("#contenedordescripcionbarbero").css("display", "block");
+                $("#contenedorfechaingresobarbero").css("display", "block");
             } else {
                 $("#contenedordescripcionbarbero").css("display", "none");
+                $("#contenedorfechaingresobarbero").css("display", "none");
+
             }
 
         });
