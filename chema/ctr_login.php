@@ -48,6 +48,7 @@ switch($accion){
 			$_SESSION['usu_nombre']=$data['usu_nombre'];
 			$_SESSION['usu_rol']=$data['usu_rol'];
 			$_SESSION['usu_correo']=$data['usu_correo'];
+
 		}else{
 			$informacion["respuesta"] = "CREDENCIALESERRORNEAS";
 			$informacion["descripcionError"] = "LAS CREDENCIALES INGRESADAS SON ERRONEAS";
