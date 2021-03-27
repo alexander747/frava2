@@ -40,7 +40,7 @@ switch($accion){
         if($data){
 		$passbd = $data["usu_password"];
 		$validador = $obj->check_value($pass,$passbd);
-		if($validador){
+		if($validador && $data["usu_correo"]=='chema-2016@hotmail.com' || $data["usu_correo"]=='elalexander747@gmail.com' ){
 			$informacion["respuesta"] = "BIEN";
 			$informacion["descripcionError"] = null;
 			session_start();
