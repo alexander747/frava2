@@ -262,7 +262,7 @@
                                         <div class="form-group col-md-3">
                                             <label>Fecha de nacimiento</label>
                                             <input class="form-control" type="date" placeholder="Fecha de nacimiento"
-                                                id="fecha" name="fecha_nacimiento">
+                                                id="fecha" name="fecha_nacimiento" required>
                                         </div>
                                         <div class="form-group col-md-3">
                                             <label>Sexo</label>
@@ -275,7 +275,7 @@
                                         <div class="form-group col-md-3">
                                             <label>Estatura</label>
                                             <input class="form-control" type="number" step="0.01" placeholder="Estatura"
-                                                id="estatura" name="estatura">
+                                                id="estatura" name="estatura" required>
                                         </div>
                                         <div class="form-group col-md-3">
                                             <label>¿Colombiano?</label>
